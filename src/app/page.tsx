@@ -38,7 +38,7 @@ const personJsonLd = {
     "African language technology",
     "Embedded systems",
   ],
-  sameAs: [siteConfig.github, siteConfig.linkedin],
+  sameAs: [siteConfig.github, siteConfig.linkedin, siteConfig.huggingFace],
 };
 
 export default function Home() {

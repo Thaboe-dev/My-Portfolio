@@ -2,7 +2,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { Mail } from "lucide-react";
 import type { ComponentType, SVGProps } from "react";
-import { GitHubIcon, LinkedInIcon } from "./icons";
+import { GitHubIcon, HuggingFaceIcon, LinkedInIcon } from "./icons";
+import { siteConfig } from "@/lib/site";
 import { SidebarNav } from "./SidebarNav";
 
 
@@ -12,8 +13,9 @@ const socialItems: Array<{
   href: string;
   Icon: ComponentType<SVGProps<SVGSVGElement>>;
 }> = [
-  { label: "GitHub", href: "https://github.com/Thaboe-dev", Icon: GitHubIcon },
-  { label: "LinkedIn", href: "http://www.linkedin.com/in/thabolezwe-mabandla-81a62a22b", Icon: LinkedInIcon },
+  { label: "GitHub", href: siteConfig.github, Icon: GitHubIcon },
+  { label: "LinkedIn", href: siteConfig.linkedin, Icon: LinkedInIcon },
+  { label: "Hugging Face", href: siteConfig.huggingFace, Icon: HuggingFaceIcon },
   { label: "Email", href: "mailto:tmabandl@andrew.cmu.edu", Icon: Mail },
 ];
 

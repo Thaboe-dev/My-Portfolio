@@ -248,18 +248,8 @@ export function PortfolioSections() {
         <SectionHeading>Publications</SectionHeading>
         <div className="rounded-md border border-slate-800/80 bg-slate-800/20 p-5 text-sm leading-normal text-slate-400">
           <h3 className="font-medium text-slate-200">Publications coming soon</h3>
-          <p className="mt-2">
-            Papers, research reports, and preprints will be added here as they become available.
-          </p>
         </div>
       </section>
     </main>
   );
 }
-
-
-
-
-
-
-

@@ -1,4 +1,4 @@
-﻿import type { SVGProps } from "react";
+import type { SVGProps } from "react";
 
 export function GitHubIcon(props: SVGProps<SVGSVGElement>) {
   return (
@@ -16,6 +16,19 @@ export function LinkedInIcon(props: SVGProps<SVGSVGElement>) {
   );
 }
 
+export function HuggingFaceIcon(props: SVGProps<SVGSVGElement>) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" {...props}>
+      <circle cx="8.25" cy="10.25" r="1.1" fill="currentColor" stroke="none" />
+      <circle cx="15.75" cy="10.25" r="1.1" fill="currentColor" stroke="none" />
+      <path d="M9 14.35c1.65 1.1 4.35 1.1 6 0" />
+      <path d="M7.25 7.35c.05-2.1 1.85-3.85 4.75-3.85s4.7 1.75 4.75 3.85" />
+      <path d="M4.1 12.25c-1.2 1.25-1.6 3-.85 4.15.55.85 1.55 1.05 2.6.45" />
+      <path d="M19.9 12.25c1.2 1.25 1.6 3 .85 4.15-.55.85-1.55 1.05-2.6.45" />
+      <path d="M5.5 11.6c0-3.55 2.75-6.1 6.5-6.1s6.5 2.55 6.5 6.1v1.25c0 4.25-2.75 7.65-6.5 7.65s-6.5-3.4-6.5-7.65z" />
+    </svg>
+  );
+}
 export function CodePenIcon(props: SVGProps<SVGSVGElement>) {
   return (
     <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" strokeWidth="5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" {...props}>

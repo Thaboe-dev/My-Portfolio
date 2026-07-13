@@ -11,6 +11,7 @@ export const siteConfig = {
   email: "tmabandl@andrew.cmu.edu",
   github: "https://github.com/Thaboe-dev",
   linkedin: "https://www.linkedin.com/in/thabolezwe-mabandla-81a62a22b",
+  huggingFace: "https://huggingface.co/thaboe01",
   affiliations: [
     "Carnegie Mellon University Africa",
     "University of Zimbabwe",
