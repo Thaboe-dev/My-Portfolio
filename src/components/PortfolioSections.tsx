@@ -96,22 +96,22 @@ const experiences: TimelineItem[] = [
 
 const projects: Project[] = [
   {
+    date: "Sep 2026 - Present",
+    title: "Agent-Augmented VLA for Training-Free Policy Adaptation",
+    description: "Designing an agentic supervision harness that monitors a frozen vision-language-action policy at runtime, detects execution failures, and applies corrective actions without retraining or collecting new demonstrations. Evaluating the approach on LIBERO manipulation tasks before sim-to-real transfer to bimanual YAM robots.",
+    tags: ["Vision-Language-Action", "Agentic AI", "LIBERO", "Robot Manipulation", "Sim-to-Real"],
+  },
+  {
+    date: "May 2026 - Present",
+    title: "Adversarial RL for Indirect Robot Control",
+    description: "Developed a ROS 2 and Gazebo reinforcement learning framework in which an embodied parasite agent steers an autonomous iRobot Create 2 indirectly through virtual bumper interventions. Modeling temporally extended actions as an SMDP and training PPO policies for sparse, goal-directed control under partial observability.",
+    tags: ["Reinforcement Learning", "ROS 2", "Gazebo", "PPO", "SMDP", "Robotics"],
+  },
+  {
     date: "Aug 2023 - Jun 2024",
     title: "LLM for Shona Spelling Correction",
     description: "Developed the first LLM-based spell checker for Shona, supporting language digitization and preservation for one of Zimbabwe's major native languages. Built and fine-tuned models on HPC clusters as part of undergraduate research.",
     tags: ["LLMs", "Shona", "NLP", "HPC", "Research"],
-  },
-  {
-    date: "Oct - Dec 2024",
-    title: "LLM Agent Prototype for Zimpapers",
-    description: "Designed a local LLM-powered agent for journalists that retrieved from internal archives and integrated real-time Google Search, improving contextual research workflows for Zimbabwe's largest media house.",
-    tags: ["LLM Agents", "RAG", "Search", "Local AI", "Prototyping"],
-  },
-  {
-    date: "Jul 2024",
-    title: "IoT + AI for Power Infrastructure Security",
-    description: "Collaborated with Team BitLords to win the 2024 TEXPO Hackathon. Designed an IoT system for ZESA to detect transformer oil and copper cable theft in real time and analyze sensor data for predictive incident detection.",
-    tags: ["IoT", "AI", "Sensor Analytics", "Predictive Modeling", "Hackathon Winner"],
   },
 ];
 
@@ -233,14 +233,14 @@ export function PortfolioSections() {
       <section id="experience" className="mb-16 scroll-mt-16 md:mb-24 lg:mb-36 lg:scroll-mt-24" aria-label="Work experience">
         <SectionHeading>Experience</SectionHeading>
         <ol className="group/list">{experiences.map((item) => <TimelineCard key={`${item.date}-${item.organization}`} item={item} />)}</ol>
-        <a className="inline-flex items-center font-medium leading-tight text-slate-200 hover:text-teal-300 focus-visible:text-teal-300 group/link" href="https://drive.google.com/file/d/1RYGtRd5oEPsq4Vflff3rXyyqTqhVWUTW/view?usp=sharing" target="_blank" rel="noreferrer">
+        <a className="inline-flex items-center font-medium leading-tight text-slate-200 hover:text-teal-300 focus-visible:text-teal-300 group/link" href="https://drive.google.com/file/d/1x4uvfykXiK4v9Gq1Vklv1oUQ8SWg86vh/view?usp=sharing" target="_blank" rel="noreferrer">
           <span>View Full R&eacute;sum&eacute;</span>
           <ExternalLinkIcon className="ml-1 h-4 w-4 transition-transform group-hover/link:-translate-y-1 group-hover/link:translate-x-1" />
         </a>
       </section>
 
-      <section id="projects" className="mb-16 scroll-mt-16 md:mb-24 lg:mb-36 lg:scroll-mt-24" aria-label="Selected projects">
-        <SectionHeading>Projects</SectionHeading>
+      <section id="projects" className="mb-16 scroll-mt-16 md:mb-24 lg:mb-36 lg:scroll-mt-24" aria-label="Research projects">
+        <SectionHeading>Research Projects</SectionHeading>
         <ul className="group/list">{projects.map((item) => <ProjectCard key={item.title} item={item} />)}</ul>
       </section>
 
