@@ -3,6 +3,19 @@ import { Inter } from "next/font/google";
 import { absoluteUrl, siteConfig } from "@/lib/site";
 import "./globals.css";
 
+const themeScript = `
+  try {
+    const savedTheme = localStorage.getItem("portfolio-theme");
+    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+    const theme = savedTheme === "light" || savedTheme === "dark"
+      ? savedTheme
+      : prefersDark ? "dark" : "light";
+
+    document.documentElement.classList.toggle("dark", theme === "dark");
+    document.documentElement.style.colorScheme = theme;
+  } catch {}
+`;
+
 const inter = Inter({
   variable: "--font-inter",
   subsets: ["latin"],
@@ -68,8 +81,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${inter.variable} h-full scroll-smooth antialiased`}>
-      <body className="min-h-full bg-slate-900 font-sans">{children}</body>
+    <html
+      lang="en"
+      className={`${inter.variable} h-full scroll-smooth antialiased`}
+      suppressHydrationWarning
+    >
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: themeScript }} />
+      </head>
+      <body className="min-h-full bg-background font-sans">{children}</body>
     </html>
   );
 }

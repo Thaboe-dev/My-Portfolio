@@ -117,15 +117,15 @@ const projects: Project[] = [
 
 function SectionHeading({ children }: { children: string }) {
   return (
-    <div className="sticky top-0 z-20 -mx-6 mb-4 bg-slate-900/75 px-6 py-5 backdrop-blur md:-mx-12 md:px-12 lg:sr-only lg:relative lg:top-auto lg:mx-0 lg:w-auto lg:bg-transparent lg:p-0 lg:opacity-0">
-      <h2 className="text-sm font-bold uppercase tracking-[0.1em] text-slate-200">{children}</h2>
+    <div className="sticky top-0 z-20 -mx-6 mb-4 bg-white/85 px-6 py-5 backdrop-blur md:-mx-12 md:px-12 lg:sr-only lg:relative lg:top-auto lg:mx-0 lg:w-auto lg:bg-transparent lg:p-0 lg:opacity-0 dark:bg-slate-900/75">
+      <h2 className="text-sm font-bold uppercase tracking-[0.1em] text-slate-900 dark:text-slate-200">{children}</h2>
     </div>
   );
 }
 
 function InlineLink({ href, children }: { href: string; children: string }) {
   return (
-    <a className="font-medium text-slate-200 hover:text-teal-300 focus-visible:text-teal-300" href={href} target="_blank" rel="noreferrer">
+    <a className="font-medium text-slate-900 hover:text-teal-700 focus-visible:text-teal-700 dark:text-slate-200 dark:hover:text-teal-300 dark:focus-visible:text-teal-300" href={href} target="_blank" rel="noreferrer">
       {children}
     </a>
   );
@@ -137,7 +137,7 @@ function Tags({ tags = [] }: { tags?: string[] }) {
     <ul className="mt-3 flex flex-wrap gap-1.5" aria-label="Technologies and topics">
       {tags.map((tag) => (
         <li key={tag}>
-          <span className="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-300">
+          <span className="flex items-center rounded-full bg-teal-50 px-3 py-1 text-xs font-medium leading-5 text-teal-800 dark:bg-teal-400/10 dark:text-teal-300">
             {tag}
           </span>
         </li>
@@ -149,7 +149,7 @@ function Tags({ tags = [] }: { tags?: string[] }) {
 function CardShell({ children }: { children: React.ReactNode }) {
   return (
     <div className="group relative grid gap-4 pb-1 transition-all sm:grid-cols-8 sm:gap-8 md:gap-4 lg:hover:!opacity-100 lg:group-hover/list:opacity-50">
-      <div className="absolute -inset-x-4 -inset-y-4 z-0 hidden rounded-md transition motion-reduce:transition-none lg:-inset-x-6 lg:block lg:group-hover:bg-slate-800/50 lg:group-hover:shadow-[inset_0_1px_0_0_rgba(148,163,184,0.1)] lg:group-hover:drop-shadow-lg" />
+      <div className="absolute -inset-x-4 -inset-y-4 z-0 hidden rounded-md transition motion-reduce:transition-none lg:-inset-x-6 lg:block lg:group-hover:bg-slate-100/80 lg:group-hover:shadow-[inset_0_1px_0_0_rgba(15,23,42,0.05)] lg:group-hover:drop-shadow-sm dark:lg:group-hover:bg-slate-800/50 dark:lg:group-hover:shadow-[inset_0_1px_0_0_rgba(148,163,184,0.1)] dark:lg:group-hover:drop-shadow-lg" />
       {children}
     </div>
   );
@@ -158,20 +158,20 @@ function CardShell({ children }: { children: React.ReactNode }) {
 function TimelineCard({ item }: { item: TimelineItem }) {
   const heading = (
     <span>
-      {item.title} <span className="text-slate-500">-</span> {item.organization}
+      {item.title} <span className="text-slate-400 dark:text-slate-500">-</span> {item.organization}
     </span>
   );
 
   return (
     <li className="mb-12">
       <CardShell>
-        <header className="z-10 mb-2 mt-1 text-xs font-semibold uppercase tracking-wide text-slate-500 sm:col-span-2">
+        <header className="z-10 mb-2 mt-1 text-xs font-semibold uppercase tracking-wide text-slate-600 sm:col-span-2 dark:text-slate-500">
           {item.date}
         </header>
         <div className="z-10 sm:col-span-6">
-          <h3 className="font-medium leading-snug text-slate-200">
+          <h3 className="font-medium leading-snug text-slate-900 dark:text-slate-200">
             {item.href ? (
-              <a className="inline-flex items-baseline font-medium leading-tight text-slate-200 hover:text-teal-300 focus-visible:text-teal-300 group/link" href={item.href} target="_blank" rel="noreferrer" aria-label={`${item.title} at ${item.organization} (opens in a new tab)`}>
+              <a className="group/link inline-flex items-baseline font-medium leading-tight text-slate-900 hover:text-teal-700 focus-visible:text-teal-700 dark:text-slate-200 dark:hover:text-teal-300 dark:focus-visible:text-teal-300" href={item.href} target="_blank" rel="noreferrer" aria-label={`${item.title} at ${item.organization} (opens in a new tab)`}>
                 {heading}
                 <ExternalLinkIcon className="ml-1 inline-block h-4 w-4 shrink-0 translate-y-px transition-transform group-hover/link:-translate-y-1 group-hover/link:translate-x-1" />
               </a>
@@ -179,7 +179,7 @@ function TimelineCard({ item }: { item: TimelineItem }) {
           </h3>
           <p className="mt-2 text-sm leading-normal">{item.description}</p>
           {item.details ? (
-            <ul className="mt-3 space-y-1 text-sm leading-normal text-slate-400">
+            <ul className="mt-3 space-y-1 text-sm leading-normal text-slate-600 dark:text-slate-400">
               {item.details.map((detail) => <li key={detail}>{detail}</li>)}
             </ul>
           ) : null}
@@ -194,11 +194,11 @@ function ProjectCard({ item }: { item: Project }) {
   return (
     <li className="mb-12">
       <CardShell>
-        <header className="z-10 mb-2 mt-1 text-xs font-semibold uppercase tracking-wide text-slate-500 sm:col-span-2">
+        <header className="z-10 mb-2 mt-1 text-xs font-semibold uppercase tracking-wide text-slate-600 sm:col-span-2 dark:text-slate-500">
           {item.date}
         </header>
         <div className="z-10 sm:col-span-6">
-          <h3 className="font-medium leading-snug text-slate-200">{item.title}</h3>
+          <h3 className="font-medium leading-snug text-slate-900 dark:text-slate-200">{item.title}</h3>
           <p className="mt-2 text-sm leading-normal">{item.description}</p>
           <Tags tags={item.tags} />
         </div>
@@ -233,7 +233,7 @@ export function PortfolioSections() {
       <section id="experience" className="mb-16 scroll-mt-16 md:mb-24 lg:mb-36 lg:scroll-mt-24" aria-label="Work experience">
         <SectionHeading>Experience</SectionHeading>
         <ol className="group/list">{experiences.map((item) => <TimelineCard key={`${item.date}-${item.organization}`} item={item} />)}</ol>
-        <a className="inline-flex items-center font-medium leading-tight text-slate-200 hover:text-teal-300 focus-visible:text-teal-300 group/link" href="https://drive.google.com/file/d/1x4uvfykXiK4v9Gq1Vklv1oUQ8SWg86vh/view?usp=sharing" target="_blank" rel="noreferrer">
+        <a className="group/link inline-flex items-center font-medium leading-tight text-slate-900 hover:text-teal-700 focus-visible:text-teal-700 dark:text-slate-200 dark:hover:text-teal-300 dark:focus-visible:text-teal-300" href="https://drive.google.com/file/d/1x4uvfykXiK4v9Gq1Vklv1oUQ8SWg86vh/view?usp=sharing" target="_blank" rel="noreferrer">
           <span>View Full R&eacute;sum&eacute;</span>
           <ExternalLinkIcon className="ml-1 h-4 w-4 transition-transform group-hover/link:-translate-y-1 group-hover/link:translate-x-1" />
         </a>
@@ -246,8 +246,8 @@ export function PortfolioSections() {
 
       <section id="publications" className="mb-16 scroll-mt-16 md:mb-24 lg:mb-36 lg:scroll-mt-24" aria-label="Publications">
         <SectionHeading>Publications</SectionHeading>
-        <div className="rounded-md border border-slate-800/80 bg-slate-800/20 p-5 text-sm leading-normal text-slate-400">
-          <h3 className="font-medium text-slate-200">Publications coming soon</h3>
+        <div className="rounded-md border border-slate-200 bg-slate-50 p-5 text-sm leading-normal text-slate-600 dark:border-slate-800/80 dark:bg-slate-800/20 dark:text-slate-400">
+          <h3 className="font-medium text-slate-900 dark:text-slate-200">Publications coming soon</h3>
         </div>
       </section>
     </main>

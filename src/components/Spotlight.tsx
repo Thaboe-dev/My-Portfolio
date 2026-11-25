@@ -19,7 +19,7 @@ export function Spotlight() {
       aria-hidden="true"
       className="pointer-events-none fixed inset-0 z-30 transition duration-300"
       style={{
-        background: `radial-gradient(600px at ${position.x} ${position.y}, rgba(29, 78, 216, 0.15), transparent 80%)`,
+        background: `radial-gradient(600px at ${position.x} ${position.y}, var(--spotlight-color), transparent 80%)`,
       }}
     />
   );
